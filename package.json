@@ -13,7 +13,11 @@
     "traceur": "0.0.85",
     "zone.js": "^0.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "broccoli-funnel": "^0.2.2",
+    "broccoli-merge-trees": "^0.2.1",
+    "broccoli-stew": "^0.2.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
