@@ -27,6 +27,13 @@ var appAssets =  new Funnel('app', {
 //appAssets = stew.log(appAssets, { output: 'tree', label: 'appAssets' })
 
 
+var lodash = new Funnel('node_modules/lodash', {
+    srcDir: '/',
+    destDir: '/vendor/lodash'
+});
+//lodash = stew.log(lodash, { output: 'tree', label: 'lodash' })
+
+
 var systemjs = new Funnel('node_modules/systemjs', {
     srcDir: '/dist/',
     destDir: '/vendor/systemjs'
@@ -49,13 +56,15 @@ var angularES6 = new Funnel('node_modules/angular2', {
 });
 //angularES6 = stew.log(angularES6, { output: 'tree', label: 'angularES6' })
 
+var vendorFiles = mergeTrees([lodash, systemjs]);
+
 
 var ts2jsFiles = typescriptCompiler(mergeTrees([appScripts, angularES6]));
 //ts2jsFiles = stew.log(ts2jsFiles, { output: 'tree', label: 'ts2jsFiles' });
 
 
 
-module.exports = mergeTrees([ts2jsFiles, appAssets, systemjs]);
+module.exports = mergeTrees([ts2jsFiles, appAssets, vendorFiles]);
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
