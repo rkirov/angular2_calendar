@@ -44,7 +44,7 @@ var systemjs = new Funnel('node_modules/systemjs', {
 var es6SuffixRexexp = /(.+)\.es6/;
 var angularES6 = new Funnel('node_modules/angular2', {
     srcDir: '/es6/prod/',
-    include: ['**/*.es6'],
+    include: ['**/*.es6', '**/*.map'],
     destDir: '/vendor/angular',
     getDestinationPath: function(relativePath) {
         if (es6SuffixRexexp.test(relativePath)) {
