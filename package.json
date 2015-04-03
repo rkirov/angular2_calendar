@@ -5,12 +5,11 @@
   "main": "main.js",
   "dependencies": {
     "angular2": "^2.0.0-alpha.7.dev",
-    "lodash": "^3.4.0",
-    "systemjs": "^0.14.1",
-
+    "broccoli-traceur": "^0.13.0",
     "es6-module-loader": "^0.14.0",
-
+    "lodash": "^3.4.0",
     "rtts_assert": "2.0.0-alpha.13",
+    "systemjs": "^0.14.1",
     "zone.js": "0.4.0"
   },
   "devDependencies": {
